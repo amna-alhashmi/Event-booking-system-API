@@ -41,14 +41,16 @@ public class TicketBookingService {
 
         ticketBookingInterface.save(ticketInformation);
     }
-    public List<TicketBooking> getAllTicket1(){
-        return ticketBookingInterface.getAllTicket1();
-    }
+
     public Integer getBookingByNumberOfTicket(Integer eventId)throws ParseException {
         Integer ticketBookings=ticketBookingInterface.getBookingByNumberOfTicket(eventId);
         return ticketBookings;
 
     }
+    public List<TicketBooking> getAllTicket1(){
+        return ticketBookingInterface.getAllTicket1();
+    }
+
 public void BookingCancellation(Integer bookingId){
         TicketBooking ticketBooking=ticketBookingInterface.getTicketById(bookingId);
         ticketBooking.setTicketAvailable(0);

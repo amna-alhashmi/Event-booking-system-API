@@ -1,5 +1,6 @@
 package com.example.UserRegistration.Controller;
 
+import com.example.UserRegistration.Models.Event;
 import com.example.UserRegistration.Models.TicketBooking;
 import com.example.UserRegistration.Models.UserRegistration;
 import com.example.UserRegistration.RequestObject.TicketRequest;
@@ -26,6 +27,10 @@ public class TicketBookingController {
     public Integer getBookingByNumberOfTicket(Integer eventId) throws ParseException {
         return ticketBookingService.getBookingByNumberOfTicket(eventId);
 
+    }
+    @RequestMapping(value = "getAllValues",method = RequestMethod.GET)
+    public List<TicketBooking> getAllTicket1(){
+        return ticketBookingService.getAllTicket1();
     }
     @RequestMapping(value = "BookingCancellation:",method = RequestMethod.POST)
 public void BookingCancellation(@RequestParam Integer bookingId){
