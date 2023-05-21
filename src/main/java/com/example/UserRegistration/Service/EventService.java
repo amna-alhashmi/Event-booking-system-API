@@ -32,8 +32,8 @@ public class EventService {
         eventInformation.setUserRegistration(userId);
         eventInterface.save(eventInformation);
     }
-    public Event getValue(Integer id,String location,String date){
-        return eventInterface.getAllEvent1(id,location,date);
+    public Event getValue(String location,String date){
+        return eventInterface.getAllEvent1(location,date);
     }
 
 //    public Event getValue(EventSearch eventSearch) throws ParseException {

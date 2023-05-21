@@ -19,8 +19,8 @@ public class EventController {
         return "NewEvent add successful";
     }
     @RequestMapping(value = "Value",method = RequestMethod.GET)
-    public Event getValue(@RequestParam Integer id, String location,String date){
-        return eventService.getValue(id,location,date);
+    public Event getValue(@RequestParam String location,String date){
+        return eventService.getValue(location,date);
     }
 //    @RequestMapping(value = "Value", method = RequestMethod.POST)
 //    public String getValue(@RequestParam Integer id ,String location, String dateFrom,String dateTo) {

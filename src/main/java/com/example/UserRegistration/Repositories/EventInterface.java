@@ -13,8 +13,8 @@ public interface EventInterface extends JpaRepository<Event,Integer> {
     Integer getEvenId(@Param("evanName") String name);
     @Query(value = "SELECT s FROM Event s where s.id= :eventId")
     Event getAllEvent(@Param("eventId")Integer id);
-    @Query(value = "SELECT s FROM Event s")
-    Event getAllEvent1(Integer id ,String locationName, String date);
+    @Query(value = "SELECT s FROM Event s where s.location= :locationName AND s.date= :dates")
+    Event getAllEvent1(@Param("locationName") String locationName, @Param("dates") String dates);
     @Query(value="SELECT id from event  where name= :eventName", nativeQuery = true)
     Integer getUserId(@Param("eventName") String name);
     @Query(value = "SELECT s FROM Event s where s.id= :eventId")
