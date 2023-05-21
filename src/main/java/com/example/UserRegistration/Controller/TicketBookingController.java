@@ -16,7 +16,7 @@ public class TicketBookingController {
     TicketBookingService ticketBookingService;
 
     @RequestMapping(value = "addTicketBooking", method = RequestMethod.POST)
-    public String addNewTicket(TicketRequest ticketRequest) {
+    public String addNewTicket(@RequestBody TicketRequest ticketRequest) {
         ticketBookingService.addNewTicket(ticketRequest);
 
         return "Ticket add successful";
