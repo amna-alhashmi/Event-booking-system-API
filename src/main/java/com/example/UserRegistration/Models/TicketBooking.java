@@ -26,5 +26,5 @@ public class TicketBooking extends BaseEntity{
     @JoinColumn(name = "User_id",referencedColumnName = "id")
     UserRegistration userRegistration;
 
-  
+
 }
