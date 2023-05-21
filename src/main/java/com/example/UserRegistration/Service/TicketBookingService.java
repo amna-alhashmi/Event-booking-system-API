@@ -52,8 +52,8 @@ public class TicketBookingService {
     }
 
 public void BookingCancellation(Integer bookingId){
-        TicketBooking ticketBooking=ticketBookingInterface.getTicketById(bookingId);
-        ticketBooking.setTicketAvailable(0);
+        TicketBooking ticketBooking=ticketBookingInterface.findById(bookingId).get();
+        ticketBooking.setIsActive("False");
         ticketBookingInterface.save(ticketBooking);
 }
 
