@@ -8,6 +8,8 @@ import javax.persistence.*;
 
 @Entity
 @Data
+@Getter
+@Setter
 public class TicketBooking extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
