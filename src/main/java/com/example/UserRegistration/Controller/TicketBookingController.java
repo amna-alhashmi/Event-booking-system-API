@@ -7,6 +7,7 @@ import com.example.UserRegistration.Service.TicketBookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
 import java.util.List;
 
 @RestController
@@ -22,9 +23,9 @@ public class TicketBookingController {
         return "Ticket add successful";
     }
     @RequestMapping(value = "getAllBooking", method = RequestMethod.GET)
-    public List<TicketBooking> getAllTicket1() {
-        List<TicketBooking> ticketBookings = ticketBookingService.getAllTicket1();
-        return ticketBookings;
+    public Integer getBookingByNumberOfTicket(Integer eventId) throws ParseException {
+        return ticketBookingService.getBookingByNumberOfTicket(eventId);
+
     }
     @RequestMapping(value = "BookingCancellation:",method = RequestMethod.POST)
 public void BookingCancellation(@RequestParam Integer bookingId){

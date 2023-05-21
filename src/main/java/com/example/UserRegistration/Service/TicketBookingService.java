@@ -44,8 +44,8 @@ public class TicketBookingService {
     public List<TicketBooking> getAllTicket1(){
         return ticketBookingInterface.getAllTicket1();
     }
-    public List<TicketBooking> getBookingByNumberOfTicket(Integer id)throws ParseException {
-        List<TicketBooking> ticketBookings=ticketBookingInterface.getBookingByNumberOfTicket(id);
+    public Integer getBookingByNumberOfTicket(Integer eventId)throws ParseException {
+        Integer ticketBookings=ticketBookingInterface.getBookingByNumberOfTicket(eventId);
         return ticketBookings;
 
     }
