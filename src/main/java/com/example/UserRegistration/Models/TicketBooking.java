@@ -15,6 +15,7 @@ public class TicketBooking extends BaseEntity{
     Integer numberOfTickets;
     String eventName;
     String location;
+    String isActive;
 
     @OneToOne
     @JoinColumn(name = "Event_id",referencedColumnName = "id")
@@ -31,5 +32,51 @@ public class TicketBooking extends BaseEntity{
         this.numberOfTickets = numberOfTickets;
     }
 
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(String isActive) {
+        this.isActive = isActive;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
+    public UserRegistration getUserRegistration() {
+        return userRegistration;
+    }
+
+    public void setUserRegistration(UserRegistration userRegistration) {
+        this.userRegistration = userRegistration;
+    }
 }
