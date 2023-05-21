@@ -20,5 +20,5 @@ public class UserRegistration {
     String userName;
     String password;
 
-    
+
 }
