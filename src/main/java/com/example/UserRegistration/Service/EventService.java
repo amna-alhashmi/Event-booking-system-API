@@ -34,22 +34,12 @@ public class EventService {
         eventInterface.save(eventInformation);
     }
     public Event getValue(String location,String date){
-
         return eventInterface.getAllEvent1(location,date);
     }
     public List<Event> getTicketAvailability(){
         return eventInterface.getTicketAvailability();
     }
-//    public Event getValue(EventSearch eventSearch) throws ParseException {
-//
-//        Event event = new Event();
-//        event.setName(eventSearch.getName());
-//        event.setDate(eventSearch.getDateFrom());
-//        event.setDate(eventSearch.getDateTo());
-//        event.();
-//        eventInterface.save(event);
-//        return event;
-//    }
+
 
 
 }

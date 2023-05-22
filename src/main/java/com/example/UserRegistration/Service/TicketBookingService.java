@@ -21,9 +21,10 @@ public class TicketBookingService {
     UserRegistrationInterface userRegistrationInterface;
     @Autowired
     TicketBookingInterface ticketBookingInterface;
-    public void addNewTicket(TicketRequest ticketRequest){
 
-        TicketBooking ticketInformation=new TicketBooking();
+    public void addNewTicket(TicketRequest ticketRequest) {
+
+        TicketBooking ticketInformation = new TicketBooking();
         ticketInformation.setNumberOfTickets(ticketRequest.getNumberOfTickets());
         ticketInformation.setEventName(ticketRequest.getEventName());
         ticketInformation.setLocation(ticketRequest.getLocation());
@@ -42,28 +43,24 @@ public class TicketBookingService {
         ticketBookingInterface.save(ticketInformation);
     }
 
-    public Integer getBookingByNumberOfTicket(Integer eventId)throws ParseException {
-        Integer ticketBookings=ticketBookingInterface.getBookingByNumberOfTicket(eventId);
+    public Integer getBookingByNumberOfTicket(Integer eventId) throws ParseException {
+        Integer ticketBookings = ticketBookingInterface.getBookingByNumberOfTicket(eventId);
         return ticketBookings;
 
     }
-    public List<TicketBooking> getAllTicket1(){
+
+    public List<TicketBooking> getAllTicket1() {
         return ticketBookingInterface.getAllTicket1();
+
     }
 
-public void BookingCancellation(Integer bookingId){
-        TicketBooking ticketBooking=ticketBookingInterface.findById(bookingId).get();
+    public void BookingCancellation(Integer bookingId) {
+        TicketBooking ticketBooking = ticketBookingInterface.findById(bookingId).get();
         ticketBooking.setIsActive("False");
         ticketBookingInterface.save(ticketBooking);
+    }
+
 }
 
 
-//    public void addBookingInformation(TicketBooking ticketBooking){
-//        TicketBooking TicketBooking1=new TicketBooking();
-//        TicketBooking1.setNumberOfTickets(ticketBooking.getNumberOfTickets());
-//        TicketBooking1.setEventName(ticketBooking.getEventName());
-//        TicketBooking1.setLocation(ticketBooking.getLocation());
-//        eventInterface.save(TicketBooking1);
-    }
-//}
 
