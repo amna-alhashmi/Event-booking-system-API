@@ -24,7 +24,7 @@ public class TicketBookingController {
 
         return "Ticket add successful";
     }
-
+    @PreAuthorize("hasRole('USER')")
     @RequestMapping(value = "getAllBooking", method = RequestMethod.GET)
     public Integer getBookingByNumberOfTicket(Integer eventId) throws ParseException {
         return ticketBookingService.getBookingByNumberOfTicket(eventId);
