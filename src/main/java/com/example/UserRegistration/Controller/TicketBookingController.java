@@ -35,7 +35,7 @@ public class TicketBookingController {
     public List<TicketBooking> getAllTicket1(){
         return ticketBookingService.getAllTicket1();
     }
-
+    @PreAuthorize("hasRole('USER')")
     @RequestMapping(value = "BookingCancellation",method = RequestMethod.POST)
     public void BookingCancellation(@RequestParam Integer bookingId){
         ticketBookingService.BookingCancellation(bookingId);
