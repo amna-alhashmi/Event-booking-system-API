@@ -30,7 +30,7 @@ public class TicketBookingController {
         return ticketBookingService.getBookingByNumberOfTicket(eventId);
 
     }
-
+    @PreAuthorize("hasRole('USER')")
     @RequestMapping(value = "getAllValues",method = RequestMethod.GET)
     public List<TicketBooking> getAllTicket1(){
         return ticketBookingService.getAllTicket1();
