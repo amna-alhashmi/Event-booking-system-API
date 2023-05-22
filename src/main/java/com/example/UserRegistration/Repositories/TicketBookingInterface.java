@@ -20,7 +20,7 @@ public interface TicketBookingInterface extends JpaRepository<TicketBooking,Inte
     Integer getBookingByNumberOfTicket(@Param("eventId")Integer id);
     @Query(value = "SELECT s FROM TicketBooking s where s.id= :ticketBookingId")
     TicketBooking getTicketById(@Param("ticketBookingId")Integer id);
-    @Query(value = "Select count(id) from TicketBooking ", nativeQuery = true)
+    @Query(value = "Select count(id) from ticket_booking ", nativeQuery = true)
     Integer getTotalNumberOfBooking();
     @Query (value = "SELECT s FROM TicketBooking s")
     List<TicketBooking> getAllTicketBooking();

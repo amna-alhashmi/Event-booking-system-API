@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ReportController {
     @Autowired
     ReportService reportService;
-    @RequestMapping(value = "ReportForEventBookingSystem",method = RequestMethod.GET)
+    @RequestMapping(value = "reportForEventBookingSystem",method = RequestMethod.GET)
 
     public void getReportForEventBookingSystem() throws Exception{
 
