@@ -9,12 +9,16 @@ import lombok.Setter;
 @Data
 public class ReportEventBookingSystem {
     Integer totalBooking;
-    String topEvent;
-    String topUsers;
+    String eventName;
+    Integer booking;
+    String userName;
+    Integer userBooking;
 
-    public ReportEventBookingSystem(Integer totalBooking, String topEvent, String topUsers) {
+    public ReportEventBookingSystem(Integer totalBooking, String eventName, Integer booking, String userName, Integer userBooking) {
         this.totalBooking = totalBooking;
-        this.topEvent = topEvent;
-        this.topUsers = topUsers;
+        this.eventName = eventName;
+        this.booking = booking;
+        this.userName = userName;
+        this.userBooking = userBooking;
     }
 }
