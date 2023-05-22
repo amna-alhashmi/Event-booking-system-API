@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface EventInterface extends JpaRepository<Event,Integer> {
     @Query(value="SELECT id from event  where name= :evanName", nativeQuery = true)
@@ -19,5 +21,6 @@ public interface EventInterface extends JpaRepository<Event,Integer> {
     Integer getUserId(@Param("eventName") String name);
     @Query(value = "SELECT s FROM Event s where s.id= :eventId")
     Event getAllUserRegistration(@Param("eventId")Integer eventId);
-
+    @Query(value = "SELECT s FROM Event s")
+    List<Event> getTicketAvailability();
 }

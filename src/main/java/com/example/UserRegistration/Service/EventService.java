@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.text.ParseException;
+import java.util.List;
 
 @Service
 public class EventService {
@@ -33,9 +34,12 @@ public class EventService {
         eventInterface.save(eventInformation);
     }
     public Event getValue(String location,String date){
+
         return eventInterface.getAllEvent1(location,date);
     }
-
+    public List<Event> getTicketAvailability(){
+        return eventInterface.getTicketAvailability();
+    }
 //    public Event getValue(EventSearch eventSearch) throws ParseException {
 //
 //        Event event = new Event();
