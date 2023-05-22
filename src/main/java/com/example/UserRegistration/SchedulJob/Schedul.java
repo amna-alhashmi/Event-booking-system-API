@@ -20,7 +20,7 @@ public class Schedul {
         List<Event> events = eventService.getTicketAvailability();
         for (Event s:events)
         {
-            slackClient.sendMessage("the id is :"+s.getId().toString()+"the name of school is:"+s.getName());
+            slackClient.sendMessage("the ticket availability is :"+s.getTicketAvailable().toString());
         }
         return events;
     }
