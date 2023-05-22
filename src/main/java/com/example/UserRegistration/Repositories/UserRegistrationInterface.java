@@ -1,5 +1,6 @@
 package com.example.UserRegistration.Repositories;
 
+import com.example.UserRegistration.Models.Event;
 import com.example.UserRegistration.Models.UserRegistration;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -15,5 +16,6 @@ public interface UserRegistrationInterface extends JpaRepository<UserRegistratio
     Integer getUserId(@Param("userName") String user_name);
     @Query(value = "SELECT s FROM UserRegistration s where s.id= :userId")
     UserRegistration getAllUserRegistration(@Param("userId")Integer userId);
-
+    @Query("SELECT m FROM UserRegistration m ORDER BY m.userName DESC")
+    List<UserRegistration>getTopUser();
 }
