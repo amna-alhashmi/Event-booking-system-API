@@ -23,8 +23,8 @@ public interface EventInterface extends JpaRepository<Event,Integer> {
     Event getAllUserRegistration(@Param("eventId")Integer eventId);
     @Query(value = "SELECT s FROM Event s")
     List<Event> getTicketAvailability();
-    @Query(value = "Select count(id) from event ", nativeQuery = true)
-    Integer getEventBooking();
+    @Query(value = "Select count(id) from event where name= :eventName", nativeQuery = true)
+    Integer getEventBooking(@Param("eventName")String eventName);
     @Query (value = "SELECT s FROM Event s")
     List<Event> getAllEvent();
 }

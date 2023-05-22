@@ -11,10 +11,10 @@
     <field name="booking" class="java.lang.Integer">
 
     </field>
-    <field name="userName" class="java.sql.String">
+    <field name="userName" class="java.lang.String">
 
     </field>
-    <field name="userBooking" class="java.sql.Integer">
+    <field name="userBooking" class="java.lang.Integer">
 
     </field>
     <background>

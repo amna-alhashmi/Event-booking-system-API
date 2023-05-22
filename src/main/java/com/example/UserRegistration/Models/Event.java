@@ -17,7 +17,7 @@ public class Event extends BaseEntity{
     String name;
     String location;
     Integer ticketAvailable;
-    Integer booking;
+
     @OneToOne
     @JoinColumn(name = "User_id",referencedColumnName = "id")
     UserRegistration userRegistration;

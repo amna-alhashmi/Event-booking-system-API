@@ -1,9 +1,7 @@
 package com.example.UserRegistration.Service;
 
 import com.example.UserRegistration.DTO.ReportEventBookingSystem;
-import com.example.UserRegistration.Models.Event;
 import com.example.UserRegistration.Models.TicketBooking;
-import com.example.UserRegistration.Models.UserRegistration;
 import com.example.UserRegistration.Repositories.EventInterface;
 import com.example.UserRegistration.Repositories.TicketBookingInterface;
 import com.example.UserRegistration.Repositories.UserRegistrationInterface;
@@ -28,19 +26,19 @@ public class ReportService {
     @Autowired
     TicketBookingInterface ticketBookingInterface;
     public static final String pathToReports = "C:\\Users\\user008\\Downloads\\report";
-    public String getReportForEventBookingSystem() throws FileNotFoundException, JRException {
+    public String getReportForEventBookingSystem(String eventName, String userName) throws FileNotFoundException, JRException {
         List<TicketBooking> ticketBookingList = ticketBookingInterface.getAllTicketBooking();
         List<ReportEventBookingSystem> reportEventBookingSystemArrayList = new ArrayList<>();
 
         for (TicketBooking ticketBooking : ticketBookingList) {
             Integer totalBooking = ticketBookingInterface.getTotalNumberOfBooking();
-            String eventName = ticketBooking.getEvent().getName();
-            Integer booking = eventInterface.getEventBooking();
-            String userName=ticketBooking.getEvent().getUserRegistration().getUserName();
-            Integer userBooking= userRegistrationInterface.getUserBooking();
+            String eventName1 = ticketBooking.getEvent().getName();
+            Integer booking = eventInterface.getEventBooking(eventName);
+            String userName1=ticketBooking.getEvent().getUserRegistration().getUserName();
+            Integer userBooking= userRegistrationInterface.getUserBooking(userName);
 
 
-            ReportEventBookingSystem EventBookingDTO = new ReportEventBookingSystem(totalBooking, eventName, booking,userName,userBooking);
+            ReportEventBookingSystem EventBookingDTO = new ReportEventBookingSystem(totalBooking, eventName1, booking,userName1,userBooking);
             reportEventBookingSystemArrayList.add(EventBookingDTO);
         }
         File file = new File("C:\\Users\\user008\\Desktop\\Task 8\\RESTfull-APIs\\src\\main\\resources\\ReportEventBookingSystem.jrxml");

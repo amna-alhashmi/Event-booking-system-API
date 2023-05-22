@@ -16,8 +16,8 @@ public interface UserRegistrationInterface extends JpaRepository<UserRegistratio
     Integer getUserId(@Param("userName") String user_name);
     @Query(value = "SELECT s FROM UserRegistration s where s.id= :userId")
     UserRegistration getAllUserRegistration(@Param("userId")Integer userId);
-    @Query(value = "Select count(id) from user_registration ", nativeQuery = true)
-    Integer getUserBooking();
+    @Query(value = "Select count(id) from user_registration where user_name= :userName", nativeQuery = true)
+    Integer getUserBooking(@Param("userName")String userName);
     @Query (value = "SELECT s FROM UserRegistration s")
     List<UserRegistration> getAllUserRegistration();
 
